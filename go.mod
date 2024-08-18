@@ -1,0 +1,1 @@
+module anytype-to-linkwarden
