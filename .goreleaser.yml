@@ -1,0 +1,39 @@
+project_name: migrate-json-export
+builds:
+  -
+    id: "migrate-json-export"
+    binary: "migrate-json-export"
+    dir: cmd/migrate-json-export
+    env:
+      - CGO_ENABLED=0
+archives:
+  -
+    format_overrides:
+      - goos: windows
+        format: zip
+checksum:
+  name_template: 'checksums.txt'
+snapshot:
+  name_template: "{{ .Tag }}-next"
+changelog:
+  sort: asc
+  filters:
+    exclude:
+      - '^docs:'
+      - '^test:'
+nfpms:
+  -
+    vendor: Ubels Software Development
+    homepage: https://github.com/arran4/
+    maintainer: Arran Ubels <arran@ubels.com.au>
+    description: NA
+    license: Private
+    formats:
+        - apk
+        - deb
+        - rpm
+        - termux.deb
+        - archlinux
+    release: "1"
+    section: default
+    priority: extra

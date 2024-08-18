@@ -67,7 +67,7 @@ func main() {
 	newLink := &anytype_to_linkwarden.PartialCreateLink{
 		//Name:        "Hi!",
 		//Description: "Hi!",
-		Url: "https://www.arran.net.au/",
+		Url: "https://www.example.com/",
 		Collection: &anytype_to_linkwarden.CollectionReference{
 			Id:      &anyTypeCollection.Id,
 			OwnerId: &anyTypeCollection.OwnerId,
