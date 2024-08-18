@@ -13,7 +13,7 @@ You will need to export your AnyType collection to "JSON" format:
 
 ![img_1.png](img_1.png)
 
-Then you will need to have the executable / source of `[migrate-json-export](cmd/migrate-json-export)` available. (Compile it `go build ./cmd/migrate-json-export`, install it, run it using go run `go run ./cmd/migrate-json-export <values>`..)
+Then you will need to have the executable / source of `[migrate-json-export](cmd/migrate-json-export)` available. (Compile it `go build ./cmd/migrate-json-export`, install it `go build ./cmd/migrate-json-export` or https://github.com/arran4/anytype-to-linkwarden/releases, run it using go run `go run ./cmd/migrate-json-export <values>`..)
 
 You will also need to generate an API key from Linkwarden. Only tested on selfhosted:
 

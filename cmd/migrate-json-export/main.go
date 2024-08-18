@@ -104,9 +104,9 @@ func main() {
 	}
 	log.Printf("CollectionMap: %#v", anyTypeCollection)
 
-	for _, bookmark := range bookmarks {
+	for i, bookmark := range bookmarks {
 		linkTagsIds := bookmark.Snapshot.Data.Details.Tags(tags)
-		fmt.Printf("Bookmark: %v\t%v\t%v\t%v\t%v\t%v\n", bookmark.SBType, bookmark.Snapshot.Data.Details.RelationKey, bookmark.Snapshot.Data.Details.Name, bookmark.Snapshot.Data.Details.Source, linkTagsIds, bookmark.Snapshot.Data.ObjectTypes)
+		fmt.Printf("Bookmark (%d/%d): %v\t%v\t%v\t%v\t%v\t%v\n", i, len(bookmarks), bookmark.SBType, bookmark.Snapshot.Data.Details.RelationKey, bookmark.Snapshot.Data.Details.Name, bookmark.Snapshot.Data.Details.Source, linkTagsIds, bookmark.Snapshot.Data.ObjectTypes)
 		var linkTags []*anytype_to_linkwarden.TagReference
 		for _, tagStr := range linkTagsIds {
 			linkTags = append(linkTags, &anytype_to_linkwarden.TagReference{
