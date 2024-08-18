@@ -67,8 +67,9 @@ func main() {
 	})
 
 	if *dry {
-		for _, bookmark := range bookmarks {
-			fmt.Printf("Bookmark: %v\t%v\t%v\t%v\t%v\t%v\n", bookmark.SBType, bookmark.Snapshot.Data.Details.RelationKey, bookmark.Snapshot.Data.Details.Name, bookmark.Snapshot.Data.Details.Source, bookmark.Snapshot.Data.Details.Tags(tags), bookmark.Snapshot.Data.ObjectTypes)
+		for i, bookmark := range bookmarks {
+			linkTagsIds := bookmark.Snapshot.Data.Details.Tags(tags)
+			fmt.Printf("Bookmark (%d/%d): %v\t%v\t%v\t%v\t%v\t%v\n", i, len(bookmarks), bookmark.SBType, bookmark.Snapshot.Data.Details.RelationKey, bookmark.Snapshot.Data.Details.Name, bookmark.Snapshot.Data.Details.Source, linkTagsIds, bookmark.Snapshot.Data.ObjectTypes)
 		}
 		return
 	}
