@@ -83,24 +83,6 @@ func GetCollections(token string, baseUrl string) ([]*Collection, error) {
 	return responseObject.Collections, nil
 }
 
-func GetCsrfToken(err error, host string) (string, error) {
-	response, err := http.Get(fmt.Sprintf("%s/api/v1/auth/csrf", host))
-	if err != nil {
-		return "", fmt.Errorf("csrf token request: %w", err)
-	}
-	b, err := io.ReadAll(response.Body)
-	if err != nil {
-		return "", fmt.Errorf("csrf token response: %w", err)
-	}
-	var csrfToken struct {
-		CsrfToken string `json:"csrfToken"`
-	}
-	if err := json.Unmarshal(b, &csrfToken); err != nil {
-		return "", fmt.Errorf("csrf token serialization: %w", err)
-	}
-	return csrfToken.CsrfToken, nil
-}
-
 type PartialCreateCollection struct {
 	Name        string `json:"name"`
 	Color       string `json:"color"`
