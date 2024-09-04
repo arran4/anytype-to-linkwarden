@@ -1,8 +1,8 @@
-project_name: migrate-json-export
+project_name: anytype-to-linkwarden
 builds:
   -
-    id: "migrate-json-export"
-    binary: "migrate-json-export"
+    id: "anytype-to-linkwarden"
+    binary: "anytype-to-linkwarden"
     dir: cmd/migrate-json-export
     env:
       - CGO_ENABLED=0
